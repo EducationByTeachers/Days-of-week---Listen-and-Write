@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Months - Listen and Write</title>
+  <title>Days of Week - Listen and Write</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
@@ -46,7 +46,7 @@
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 20px;
-      max-width: 1200px;
+      max-width: 900px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -76,15 +76,16 @@
 <body>
 
 <div id="start-screen" class="screen active">
-  <h1>Months - Listen and Write</h1>
-  <p>Watch the video and type the months in Spanish in the correct order. Correct answers will turn green!</p>
+  <h1>Days of Week - Listen and Write</h1>
+  <p>Watch the video and type the days of the week in Spanish in the correct order. Correct answers will turn green!</p>
   <button onclick="startActivity()">Start</button>
 </div>
 
 <div id="game-screen" class="screen">
-  <h1>Months - Listen and Write</h1>
+  <h1>Days of Week - Listen and Write</h1>
+  <!-- iframe Vimeo -->
   <iframe id="activity-video" 
-        src="https://player.vimeo.com/video/1115178187" 
+        src="https://player.vimeo.com/video/1115178829" 
         width="800" height="500" 
         frameborder="0" 
         allow="autoplay; fullscreen; picture-in-picture" 
@@ -100,9 +101,8 @@
 <canvas id="confetti-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;display:none;"></canvas>
 
 <script>
-const months = [
-  "Enero","Febrero","Marzo","Abril","Mayo","Junio",
-  "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
+const days = [
+  "Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"
 ];
 
 let confettiInterval;
@@ -120,10 +120,10 @@ function restartActivity() {
   const container = document.getElementById('inputs-container');
   container.innerHTML = '';
 
-  months.forEach((month, index) => {
+  days.forEach((day, index) => {
     const input = document.createElement('input');
-    input.setAttribute('placeholder', `Month ${index+1}`);
-    input.addEventListener('input', () => checkInput(input, month));
+    input.setAttribute('placeholder', `Day ${index+1}`);
+    input.addEventListener('input', () => checkInput(input, day));
     container.appendChild(input);
   });
 }
